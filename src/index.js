@@ -62,7 +62,7 @@ app.get('/tasks/:id', (req, res) => {
         }
         res.send(task);
     }).catch((e) => {
-        res.status(500).send(e);
+        res.status(500).send();
     });
 });
 
