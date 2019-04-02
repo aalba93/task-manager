@@ -49,6 +49,13 @@ const userSchema = new mongoose.Schema({
     }]
 });
 
+// Define relationship with Task model
+userSchema.virtual('tasks', {
+    ref: 'Task',
+    localField: '_id',
+    foreignField: 'owner'
+});
+
 // Model methods
 userSchema.statics.findByCredentials = async (email, password) => {
     const user = await User.findOne({email});
