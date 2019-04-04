@@ -26,3 +26,18 @@ if (pm.response.code === 200) {
     pm.environment.set('authToken', pm.response.json().token)
 }
 ```
+
+## MongoDB production instance configuration
+* MongoDB hosting service must be used, the Atlas service is the one used in this course. This one is created by the MongoDB organization
+
+* An account must be created at this [link](https://www.mongodb.com/cloud/atlas)
+
+### Process for setting up a new instance (cluster)
+1. Go to Clusters -> Create New Cluster
+2. Select cloud provider, region, cluster tier, additional settings and cluster name
+3. Once the instance is created, go to the Dashboard and click on *CONNECT*
+4. Set up connection security
+    1. Configure secure IP's. In this case all IP's must be whitelisted because heroku will continously change the server IP. To do so, the IP must be **0.0.0.0/0**.
+    2. Create a database user
+5. Connect to the database using the connection string defined in the GUI. Atlas instance connection client is Compass (Robo3T is not supported)
+

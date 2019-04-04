@@ -61,4 +61,4 @@ typings/
 .next
 
 # Config files
-config/*.env
+config/
