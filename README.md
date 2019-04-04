@@ -41,3 +41,16 @@ if (pm.response.code === 200) {
     2. Create a database user
 5. Connect to the database using the connection string defined in the GUI. Atlas instance connection client is Compass (Robo3T is not supported)
 
+## Environment variables configuration in Heroku
+* Set environment variable
+```sh
+heroku config:set {key}={value}
+```
+* View all environment variables
+```sh
+heroku config
+```
+* Remove an environment variable
+```sh
+heroku config:unset {key}
+```
